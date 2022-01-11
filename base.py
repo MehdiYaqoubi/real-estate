@@ -3,7 +3,7 @@ from abc import ABC
 
 class BaseClass(ABC):
     _id = 0
-    object_list = list()
+    objects_list = list()
 
     def __init__(self):
         self._id = self.generate_id()
@@ -16,4 +16,4 @@ class BaseClass(ABC):
 
     @classmethod
     def store(cls, obj):
-        cls.object_list.append(obj)
+        cls.objects_list.append(obj)
