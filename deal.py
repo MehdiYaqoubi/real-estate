@@ -10,6 +10,13 @@ class Sell(BaseClass):
         self.convertible = convertible
         super().__init__(*args, **kwargs)
 
+    def show_price(self):
+        print(
+            f"price: {self.price_per_meter}\t"
+            f"discountable: {self.discountable}\t"
+            f" convertible: {self.convertible}"
+        )
+
 
 class Rent(BaseClass):
     def __init__(
@@ -21,3 +28,11 @@ class Rent(BaseClass):
         self.convertible = convertible
         self.discountable = discountable
         super().__init__(*args, **kwargs)
+
+    def show_price(self):
+        print(
+            f"initial price: {self.initial_price}\t"
+            f"monthly price: {self.monthly_price}"
+            f"discountable: {self.discountable}\t"
+            f" convertible: {self.convertible}"
+        )
