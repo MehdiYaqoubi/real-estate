@@ -10,3 +10,8 @@ class Manager:
                     result.append(obj)
         return result
 
+    def get(self, **kwargs):
+        for key, value in kwargs.items():
+            for obj in self._class.objects_list:
+                if hasattr(obj, key) and getattr(obj, key) == value:
+                    return obj
