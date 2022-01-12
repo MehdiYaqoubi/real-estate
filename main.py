@@ -23,20 +23,20 @@ if __name__ == "__main__":
         user=Users.objects_list[0], area=80, room_count=2, built_year=1390,
         region=reg1, address='Some text...'
     )
-    apt1.show_description()
+    # apt1.show_description()
 
     house = House(
         has_yard=True, floor_count=3, user=Users.objects_list[1],
         area=400, room_count=4, built_year=1380,
         region=reg1, address='Some text...'
     )
-    house.show_description()
+    # house.show_description()
 
     store = Store(
         user=Users.objects_list[2], area=30, room_count=0, built_year=1390,
         region=reg1, address='Some text...'
     )
-    store.show_description()
+    # store.show_description()
 
     apartment_sell = ApartmentSell(
         has_elevator=True, has_parking=True, floor=2,

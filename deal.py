@@ -1,7 +1,7 @@
-from base import BaseClass
+from abc import ABC
 
 
-class Sell(BaseClass):
+class Sell(ABC):
     def __init__(
             self, price_per_meter, discountable, convertible, *args, **kwargs
     ):
@@ -18,7 +18,7 @@ class Sell(BaseClass):
         )
 
 
-class Rent(BaseClass):
+class Rent(ABC):
     def __init__(
             self, initial_price, monthly_price, convertible, discountable,
             *args, **kwargs
