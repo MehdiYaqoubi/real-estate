@@ -1,6 +1,6 @@
 from random import choice
 
-from advertisement import ApartmentSell
+from advertisement import ApartmentSell, HouseSell
 from estate import Apartment, House, Store
 from user import Users
 from region import Region
@@ -45,3 +45,14 @@ if __name__ == "__main__":
         price_per_meter=10, discountable=True, convertible=False
     )
     apartment_sell.show_details()
+
+    house_sell = HouseSell(
+        has_yard=True, floor_count=3, user=Users.objects_list[1],
+        area=400, room_count=4, built_year=1380,
+        region=reg1, address='Some text...',
+        price_per_meter=10, discountable=True, convertible=False
+    )
+    house_sell.show_details()
+
+    print(ApartmentSell.objects_list)
+    print(HouseSell.objects_list)
