@@ -2,7 +2,6 @@ from random import choice
 
 from advertisement import ApartmentSell, ApartmentRent, HouseSell, HouseRent, \
     StoreSell, StoreRent
-from estate import Apartment, House, Store
 from user import Users
 from region import Region
 
@@ -26,7 +25,7 @@ if __name__ == "__main__":
     # ApartmentSell
     apartment_sell = ApartmentSell(
         has_elevator=True, has_parking=True, floor=2,
-        user=Users.objects_list[0], area=80, room_count=2, built_year=1390,
+        user=Users.objects_list[0], area=50, room_count=2, built_year=1390,
         region=reg1, address='Some text...', price_per_meter=10,
         discountable=True
     )
@@ -78,3 +77,7 @@ if __name__ == "__main__":
     )
     # store_rent.show_details()
 
+    print("sell result: ", ApartmentSell.manager.search(region=reg1))
+    print("rent Result: ", ApartmentRent.manager.search(room_count=1))
+    print("price: ", ApartmentSell.manager.search(price_per_meter__max=12))
+    print("price: ", ApartmentSell.manager.search(area__max=51))
