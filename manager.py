@@ -2,6 +2,9 @@ class Manager:
     def __init__(self, _class):
         self._class = _class
 
+    def __str__(self):
+        return f'Manager: {self._class}'
+
     def search(self, **kwargs):
         results = list()
         for key, value in kwargs.items():
@@ -31,3 +34,6 @@ class Manager:
             for obj in self._class.objects_list:
                 if hasattr(obj, key) and getattr(obj, key) == value:
                     return obj
+
+    def count(self):
+        return len(self._class.objects_list)

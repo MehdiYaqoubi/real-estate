@@ -8,6 +8,9 @@ class ApartmentSell(BaseClass, Apartment, Sell):
         self.show_description()
         self.show_price()
 
+    # def __str__(self):
+    #     print(f"Apartment for sell: {self.area}")
+
 
 class ApartmentRent(BaseClass, Apartment, Rent):
     def show_details(self):
